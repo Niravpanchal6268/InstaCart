@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Auth.Customer.HomeF.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_margin="5dp"
+            app:cardCornerRadius="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_gravity="center"
+                android:background="#B3FE5200"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/homef_icon__id"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/online_shopping" />
+
+                <TextView
+
+                    android:id="@+id/homef_logotext__id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@id/homef_icon__id"
+                    android:fontFamily="@font/genera_semibold"
+                    android:gravity="center"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/notification" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.SearchView
+            style="@style/ThemeOverlay.Material3.TextInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="7dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/slider_view_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:layout_margin="5dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="7dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.viewpager.widget.ViewPager
+                            android:id="@+id/slider_viewpage_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:id="@+id/slider_dot_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/slider_viewpage_id"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:orientation="horizontal" />
+
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+
+                    android:id="@+id/home_categories_text_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/slider_view_id"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/genera_semibold"
+                    android:text="Categories"
+                    android:textColor="@color/fontcolor"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/home_see_more_categories_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/slider_view_id"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/vayusans_semibold"
+                    android:text="See More"
+                    android:textColor="@color/mainbg" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/home_tops_product_recyclerView_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/home_categories_text_id"
+                    android:layout_marginHorizontal="5dp"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/categories_single_card" />
+
+
+            </RelativeLayout>
+
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+</FrameLayout>

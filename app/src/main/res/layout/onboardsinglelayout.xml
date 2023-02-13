@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/onboarding_image_id"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginHorizontal="40dp"
+        android:src="@drawable/ons_welcome" />
+
+    <TextView
+        android:id="@+id/onboarding_headingtext_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/onboarding_image_id"
+        android:layout_marginStart="25dp"
+        android:fontFamily="@font/vayusans_semibold"
+        android:text="@string/welcome_ons_heading1"
+        android:textColor="@color/fontcolor"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/onboarding_subheadingtext_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/onboarding_headingtext_id"
+        android:layout_marginStart="25dp"
+        android:fontFamily="@font/genera_semibold"
+        android:text="@string/welcome_ons_subheading1"
+        android:textColor="@color/fontcolor"
+        android:textSize="35sp" />
+    <TextView
+        android:id="@+id/onboading_description_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:fontFamily="@font/vayusans_semibold"
+        android:text="@string/welcome_ons_description1"
+        android:layout_below="@id/onboarding_subheadingtext_id"
+        android:layout_marginHorizontal="25sp"
+        />
+
+
+
+</RelativeLayout>

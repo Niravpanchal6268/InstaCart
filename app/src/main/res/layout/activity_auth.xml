@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="10dp"
+    android:gravity="center"
+    tools:context=".Auth.Auth.AuthActivity">
+
+    <ImageView
+        android:id="@+id/logo_image_id"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/online_shopping"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/insta_cart_text_auth_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/logo_image_id"
+        android:fontFamily="@font/genera_semibold"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/auth_text_welcome_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/insta_cart_text_auth_id"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/genera_semibold"
+        android:text="Welcome Back!"
+        android:textColor="@color/fontcolor"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/auth_text_welcome_id"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/SingIn_Up_tablayout_id"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            app:tabIndicatorColor="@color/white"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/black"
+            app:tabTextAppearance="@style/MyCustomTextAppearance"
+            >
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/SignIn_tab_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sign in"
+
+                />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/SignUp_tab_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sign Up" />
+
+
+        </com.google.android.material.tabs.TabLayout>
+
+
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpageer_L_S_id"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

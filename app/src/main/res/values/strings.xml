@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Insta Cart</string>
+    //first
+    <string name="welcome_ons_heading1">Welcome to</string>
+    <string name="welcome_ons_subheading1">Insta cart</string>
+    <string name="welcome_ons_description1">Insta Cart is a online store.its has 50k+ Products.you can buy every into a products in easy way.InstaCart also offers exclusive discounts and rewards programs, making it an ideal choice for busy families and individuals.</string>
+
+    //second
+    <string name="ons_secound_heading2">Easy way to </string>
+    <string name="ons_secound_subheading2">Make Payment</string>
+    <string name="ons_secound_description2"></string>
+    //you can quickly browse and order items from your favorite store
+    //third
+    <string name="ons_third_heading3">Online Shopping</string>
+    <string name="ons_third_subheading3">Fastest Delivery</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

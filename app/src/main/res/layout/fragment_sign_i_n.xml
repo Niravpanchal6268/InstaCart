@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Auth.Auth.SignINFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signin_email_input_id"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25sp"
+            android:hint="Email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signin_password_input_id"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/signin_email_input_id"
+            android:layout_marginHorizontal="25sp"
+            android:layout_marginBottom="12dp"
+            android:hint="Password"
+            app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/singin_forgot_password_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/signin_password_input_id"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/vayusans_semibold"
+            android:text="Forgot Password?"
+            android:textColor="@color/mainbg"
+            android:textSize="18dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/signin_btn_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/singin_forgot_password_id"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="10dp"
+            android:fontFamily="@font/genera_semibold"
+            android:paddingVertical="20dp"
+            android:text="Sign in"
+            android:onClick="tohome"
+            android:elevation="10dp"
+            app:elevation="25sp"
+            app:cornerRadius="5dp"
+            android:textAllCaps="false"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/signin_other_text_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/signin_btn_id"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/genera_semibold"
+            android:gravity="center"
+            android:text="Sign In with Social"
+            android:textColor="@color/fontcolor"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/signin_other_text_id"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:elevation="50dp"
+                android:src="@drawable/fb_logo" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:elevation="25dp"
+                android:src="@drawable/google_log" />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>
