@@ -1,4 +1,4 @@
-package com.example.instacart.Auth.Customer.HomeF.Categories;
+package com.example.instacart.Auth.Customer.HomeF;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,13 +14,13 @@ import android.widget.ImageView;
 import com.example.instacart.R;
 
 
-public class SliderViewPager extends PagerAdapter {
+public class SliderViewPagerAdapter extends PagerAdapter {
 
     private Context context;
     private LayoutInflater layoutInflater;
     private Integer[] images = {R.drawable.slid1, R.drawable.slide1, R.drawable.slide2, R.drawable.slide3};
 
-    public SliderViewPager(Context context) {
+    public SliderViewPagerAdapter(Context context) {
         this.context = context;
     }
 
@@ -55,8 +55,8 @@ public class SliderViewPager extends PagerAdapter {
 
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        ViewPager vp=(ViewPager) container;
-        View view= (View) object;
+        ViewPager vp = (ViewPager) container;
+        View view = (View) object;
         vp.removeView(view);
     }
 }

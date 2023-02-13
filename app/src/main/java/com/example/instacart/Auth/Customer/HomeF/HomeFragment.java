@@ -1,19 +1,26 @@
 package com.example.instacart.Auth.Customer.HomeF;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.instacart.Auth.Customer.HomeF.Categories.CategoriesAdpter;
 import com.example.instacart.Auth.Customer.HomeF.Categories.CategoriesModel;
 import com.example.instacart.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -64,6 +71,11 @@ public class HomeFragment extends Fragment {
 
     RecyclerView categoriesRecyclerView;
     CategoriesAdpter categoriesAdpter;
+    ViewPager viewPager;
+    SliderViewPagerAdapter sliderViewPagerAdapter;
+    LinearLayout sliderDotpanel;
+    private int dotscount;
+    private ImageView[] dots;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -71,6 +83,8 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         categoriesRecyclerView = view.findViewById(R.id.home_tops_product_recyclerView_id);
+        //viewpageobj
+
 
         //categories firebase to app
         FirebaseRecyclerOptions<CategoriesModel> options =
@@ -82,9 +96,45 @@ public class HomeFragment extends Fragment {
         categoriesRecyclerView.setAdapter(categoriesAdpter);
 
         //slider code offline
-        
+        viewPager = view.findViewById(R.id.slider_viewpage_id);
+        sliderViewPagerAdapter = new SliderViewPagerAdapter(getContext());
 
+        viewPager.setAdapter(sliderViewPagerAdapter);
 
+        sliderDotpanel = view.findViewById(R.id.slider_dots_id);
+
+        dotscount = sliderViewPagerAdapter.getCount();
+        dots = new ImageView[dotscount];
+
+        for (int i = 0; i < dotscount; i++) {
+            dots[i] = new ImageView(getContext());
+            dots[i].setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.non_active_dot));
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            params.setMargins(8, 0, 8, 0);
+
+            sliderDotpanel.addView(dots[i], params);
+
+        }
+        dots[0].setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.active_dot));
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                for (int i = 0; i < dotscount; i++) {
+                    dots[i].setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.non_active_dot));
+                }
+                dots[position].setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.active_dot));
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
 
 
