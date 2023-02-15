@@ -55,15 +55,16 @@
             android:textColor="@color/mainbg"
             android:textSize="18dp" />
 
+
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/signin_btn_id"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:layout_below="@id/singin_forgot_password_id"
             android:layout_marginHorizontal="30dp"
             android:layout_marginVertical="10dp"
             android:fontFamily="@font/genera_semibold"
-            android:paddingVertical="20dp"
             android:text="Sign in"
             android:onClick="tohome"
             android:elevation="10dp"
@@ -83,6 +84,8 @@
             android:text="Sign In with Social"
             android:textColor="@color/fontcolor"
             android:textSize="15sp" />
+
+
 
         <LinearLayout
             android:layout_width="match_parent"

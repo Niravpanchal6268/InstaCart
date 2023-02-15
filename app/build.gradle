@@ -48,6 +48,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage:20.1.0'
 
 
+    //lotties file
+    implementation "com.airbnb.android:lottie:5.2.0"
+
 
 
 }

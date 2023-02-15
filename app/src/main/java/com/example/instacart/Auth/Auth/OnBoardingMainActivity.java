@@ -49,8 +49,9 @@ public class OnBoardingMainActivity extends AppCompatActivity {
 
                 } else {
                     Toast.makeText(OnBoardingMainActivity.this, "main", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(OnBoardingMainActivity.this, AuthActivity.class));
-                    finish();
+//                    startActivity(new Intent(OnBoardingMainActivity.this, AuthActivity.class));
+                    startActivity(new Intent(OnBoardingMainActivity.this,AuthActivity.class));
+//                    finish();
                 }
 
             }

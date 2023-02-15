@@ -1,6 +1,7 @@
 package com.example.instacart.Auth.Auth;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,20 +39,20 @@ public class AuthActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
 
-//                if (tab.getPosition()==0||tab.getPosition()==1)
-//                {
-//                    viewPager.setCurrentItem(tab.getPosition());
-//                }
-                switch (tab.getPosition()) {
-                    case 0:
-
-                        viewPager.setCurrentItem(tab.getPosition());
-
-                    case 1:
-                        viewPager.setCurrentItem(tab.getPosition());
-
-
+                if (tab.getPosition()==0||tab.getPosition()==1)
+                {
+                    viewPager.setCurrentItem(tab.getPosition());
                 }
+//                switch (tab.getPosition()) {
+//                    case 0:
+//                        viewPager.setCurrentItem(tab.getPosition());
+//                        break;
+//
+//                    case 1:
+//                        viewPager.setCurrentItem(tab.getPosition());
+//                        break;
+//
+//                }
 
             }
 

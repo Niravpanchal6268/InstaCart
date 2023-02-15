@@ -89,7 +89,7 @@
                         <androidx.viewpager.widget.ViewPager
                             android:id="@+id/slider_viewpage_id"
                             android:layout_width="fill_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="190dp" />
 
                         <LinearLayout
                             android:id="@+id/slider_dots_id"

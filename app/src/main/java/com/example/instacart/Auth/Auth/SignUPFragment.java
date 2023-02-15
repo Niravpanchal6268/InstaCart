@@ -1,5 +1,6 @@
 package com.example.instacart.Auth.Auth;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -76,7 +77,7 @@ public class SignUPFragment extends Fragment {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference reference;
     String EmailCheck = "[a-zA-Z0-9._-]+@[a-z]+\\.[a-z]+";
-
+    Dialog dialog;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -91,6 +92,8 @@ public class SignUPFragment extends Fragment {
         mobile = view.findViewById(R.id.signup_mobile_input_id);
         singup_btn = view.findViewById(R.id.signup_btn_id);
         termscheckbox = view.findViewById(R.id.signup_terms_check_box_id);
+        dialog = new Dialog(getContext());
+        dialog.setContentView(R.layout.loading_dialog);
 
         singup_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -166,6 +169,7 @@ public class SignUPFragment extends Fragment {
                     email.setError(null);
                     email.setErrorEnabled(false);
                     CheckEmail();
+
                     Toast.makeText(getContext(), "checkemail", Toast.LENGTH_SHORT).show();
                 }
 
@@ -186,6 +190,8 @@ public class SignUPFragment extends Fragment {
                         if (checkemail) {
                             Toast.makeText(getContext(), "new user", Toast.LENGTH_SHORT).show();
                             UserAuthentication();
+                            dialog.show();
+
                         } else {
                             email.setError("This Email is  Taken.Try another");
                             Toast.makeText(getContext(), "old user", Toast.LENGTH_SHORT).show();
@@ -200,7 +206,7 @@ public class SignUPFragment extends Fragment {
         String Email = email.getEditText().getText().toString().trim();
         String Mobile = mobile.getEditText().getText().toString().trim();
         String Password = password.getEditText().getText().toString().trim();
-        CustomerInfoModel customerInfoModel = new CustomerInfoModel(Name, Mobile, Email, Password);
+
         firebaseDatabase = FirebaseDatabase.getInstance();
         reference = firebaseDatabase.getReference("Customers");
         mAuth = FirebaseAuth.getInstance();
@@ -209,10 +215,12 @@ public class SignUPFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            String ui = mAuth.getCurrentUser().getUid().toString();
 
-                            reference.child(Name).setValue(customerInfoModel);
+                            CustomerInfoModel customerInfoModel = new CustomerInfoModel(Name, Mobile, Email, Password,ui);
+                            reference.child(ui).setValue(customerInfoModel);
                             Toast.makeText(getContext(), "Sign up successfull ", Toast.LENGTH_SHORT).show();
-
+                            dialog.dismiss();
                             name.getEditText().setText(null);
                             email.getEditText().setText(null);
                             mobile.getEditText().setText(null);
@@ -221,6 +229,7 @@ public class SignUPFragment extends Fragment {
 
                         } else {
                             Toast.makeText(getContext(), "Sign up fails", Toast.LENGTH_SHORT).show();
+                            dialog.dismiss();
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {

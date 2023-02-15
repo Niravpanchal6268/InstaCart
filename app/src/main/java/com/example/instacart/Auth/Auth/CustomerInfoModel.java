@@ -1,13 +1,14 @@
 package com.example.instacart.Auth.Auth;
 
 public class CustomerInfoModel {
-    private String CustomerName,CustomerMobile,CustomerEmail,CustomerPassword;
+    private String CustomerName,CustomerMobile,CustomerEmail,CustomerPassword,CustomerUid;
 
-    public CustomerInfoModel(String customerName, String customerMobile, String customerEmail, String customerPassword) {
+    public CustomerInfoModel(String customerName, String customerMobile, String customerEmail, String customerPassword, String customerUid) {
         CustomerName = customerName;
         CustomerMobile = customerMobile;
         CustomerEmail = customerEmail;
         CustomerPassword = customerPassword;
+        CustomerUid = customerUid;
     }
 
     public CustomerInfoModel() {
@@ -43,5 +44,13 @@ public class CustomerInfoModel {
 
     public void setCustomerPassword(String customerPassword) {
         CustomerPassword = customerPassword;
+    }
+
+    public String getCustomerUid() {
+        return CustomerUid;
+    }
+
+    public void setCustomerUid(String customerUid) {
+        CustomerUid = customerUid;
     }
 }

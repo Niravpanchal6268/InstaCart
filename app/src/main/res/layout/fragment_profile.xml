@@ -5,10 +5,22 @@
     android:layout_height="match_parent"
     tools:context=".Auth.Customer.ProfileF.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
+      <Button
+          android:id="@+id/log_out_btn_id"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentBottom="true"
+          android:layout_centerHorizontal="true"
+          android:text="Log out"
+          android:layout_marginBottom="25dp"
+          />
+
+
+
+  </RelativeLayout>
 
 </FrameLayout>
